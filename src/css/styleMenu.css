@@ -1,0 +1,50 @@
+body {
+  background: #c9bda3;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background-color: #ede2cb;
+  border-radius: 30px;
+  height: 367px;
+  width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.caption {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 5px;
+  background-color: #d8c7a4;
+}
+
+.play,
+.options {
+  padding: 5px;
+  margin: 0 20px;
+  background-color: #ddb09d;
+  border-radius: 20px;
+}
+
+.play:hover,
+.options:hover {
+  transform: scale(1.03);
+  background-color: #d89a7f;
+}
+
+.aboutcap {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 2px;
+  background-color: #e0d3b8;
+}
