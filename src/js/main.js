@@ -72,7 +72,7 @@
       let image = clone.querySelector('.card__front');
 
       container.dataset.framework = `${arrayItems[i]}`;
-      image.src = `../src/img/${arrayItems[i]}.svg`;
+      image.src = `src/img/${arrayItems[i]}.svg`;
       mainContainer.appendChild(clone);
     }
 
