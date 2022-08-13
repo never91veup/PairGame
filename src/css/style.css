@@ -1,11 +1,8 @@
-
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 body {
   height: 100vh;
   display: flex;
@@ -13,7 +10,6 @@ body {
   background: #c9bda3;
   position: relative;
 }
-
 .main__container {
   margin: auto;
   display: grid;
@@ -24,7 +20,6 @@ body {
   background: rgb(81, 168, 184);
   perspective: 1000px;
 }
-
 .card__container {
   width: 100px;
   height: 100px;
@@ -38,8 +33,6 @@ body {
 	-webkit-user-select: none; 
 	user-select: none;
 }
-
-
 .card__front,
 .card__back {
   width: 100%;
@@ -48,26 +41,21 @@ body {
   background: #fff;
   backface-visibility: hidden;
 }
-
 .card__container:active {
   transform: scale(0.97);
   transition: transform .2s;
 }
-
 .card__container.flip {
   transform: rotateY(180deg);
 }
-
 .card__front {
   transform: rotateY(180deg);
 }
-
-.menu {
+.menu__back {
   position: absolute;
   left: 30px;
   top: 40px;
 }
-
 .backlink {
   background-color: #e23237;
   box-shadow: 0 5px 0 darkred;
@@ -77,13 +65,66 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
-
 .backlink:hover {
   cursor: pointer;
   background-color: #b52e31;
 }
-
 .backlink:active {
   box-shadow: none;
   top: 5px;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu {
+  background-color: #ede2cb;
+  height: 340px;
+  width: 700px;
+  text-align: center;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.caption {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 5px;
+  background-color: #d8c7a4;
+}
+.start {
+  padding: 20px;
+  margin: 0 20px;
+  margin-bottom: 20px;
+  background-color: #ddb09d;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.start:hover {
+  transform: scale(1.03);
+  background-color: #d89a7f;
+}
+.background {
+  background: rgba(255,255,255,.5);
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.restart {
+  padding: 20px;
+  margin: 0 20px;
+  background-color: #ddb09d;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.restart:hover {
+  transform: scale(1.03);
+  background-color: #d89a7f;
 }

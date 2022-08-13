@@ -14,19 +14,38 @@
     <link rel="stylesheet" href="src/css/style.css" />
   </head>
   <body>
+    <section class="main__container" style="display: none"></section>
 
-    <section class="main__container">
-
-    </section>
-
-    <div class="menu">
+    <!-- <div class="menu">
       <h3><a class="backlink" href="menu.html">Меню</a></h3>
+    </div> -->
+
+    <div class="container">
+      <div class="menu">
+        <div class="caption">
+          <h1>Игра в "пары"</h1>
+        </div>
+        <input class="range" type="range" min="2" max="10" step="2" value="4" />
+        <div class="start">
+          <h2>Начать игру</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="background" style="display: none">
+      <div class="restart">
+        <h2>Начать заново</h2>
+      </div>
+    </div>
+
+    <div class="menu__back" style="display: none;">
+      <div class="backlink"><h3>Выйти в меню</h3></div>
     </div>
 
     <template id="producttable">
       <div class="card__container" data-framework="">
-        <img class="card__front" src="" alt="">
-        <img class="card__back" src="src/img/back.svg" alt="">
+        <img class="card__front" src="" alt="" />
+        <img class="card__back" src="src/img/back.svg" alt="" />
       </div>
     </template>
 
