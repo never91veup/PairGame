@@ -16,17 +16,14 @@
   <body>
     <section class="main__container" style="display: none"></section>
 
-    <!-- <div class="menu">
-      <h3><a class="backlink" href="menu.html">Меню</a></h3>
-    </div> -->
-
     <div class="container">
       <div class="menu">
         <div class="caption">
           <h1>Игра в "пары"</h1>
         </div>
+        <input type="text" name="time" id="time" placeholder="Введите время раунда:">
         <input class="range" type="range" min="2" max="10" step="2" value="4" />
-        <div class="start">
+        <div class="start" id="button">
           <h2>Начать игру</h2>
         </div>
       </div>
@@ -42,10 +39,12 @@
       <div class="backlink"><h3>Выйти в меню</h3></div>
     </div>
 
+    <div id="timer" style="display: none;"></div>
+
     <template id="producttable">
       <div class="card__container" data-framework="">
-        <img class="card__front" src="" alt="" />
-        <img class="card__back" src="src/img/back.svg" alt="" />
+        <img class="card__front" />
+        <img class="card__back" src="src/img/back.svg" />
       </div>
     </template>
 

@@ -108,11 +108,20 @@
       rows.length * 100 + (rows.length + 1) * 20
     }px`;
 
+
     let template = document.getElementById("producttable");
 
     for (let i = 0; i < arrayItems.length; i++) {
       let clone = template.content.cloneNode(true);
       let container = clone.querySelector(".card__container");
+      if(Math.sqrt(arrayItems.length) == 8)  {
+        container.style.width = '80px';
+        container.style.height = '80px';
+      }
+      else if(Math.sqrt(arrayItems.length) == 10) {
+        container.style.width = '70px';
+        container.style.height = '70px';
+      }
       let image = clone.querySelector(".card__front");
 
       container.dataset.number = `${arrayItems[i]}`;
@@ -124,11 +133,21 @@
   let start = document.querySelector(".start");
   let restart = document.querySelector(".restart");
   let menuBack = document.querySelector('.menu__back');
+  let endOfTimer = false;
+
   menuBack.addEventListener("click", restartGame);
   start.addEventListener("click", startGame);
   restart.addEventListener("click", restartGame);
 
+
+
   function startGame() {
+    endOfTimer = false;
+    let timerInput = document.getElementById('time');
+    let timerShow = document.getElementById('timer');
+    timerShow.style.display = 'block';
+    let timeMinut = parseInt(timerInput.value) * 60;
+
     let input = document.querySelector(".range");
     let size = input.value;
     let menu = document.querySelector(".container");
@@ -143,9 +162,37 @@
     addItems(arrayItems);
 
     initCards();
+
+    timer = setInterval(function () {
+      let restart = document.querySelector(".background");
+      let seconds = timeMinut%60; // Получаем секунды
+      let minutes = timeMinut/60%60;  // Получаем минуты
+      let hour = timeMinut/60/60%60; // Получаем часы
+      // Условие если время закончилось то...
+      if (timeMinut <= 0 || endOfTimer) {
+          // Таймер удаляется
+          clearInterval(timer);
+          timerShow.innerHTML = '';
+          timerShow.style.display = 'none';
+          // Выводит сообщение что время закончилось
+          if(timeMinut <= 0) {
+            restart.style.display = "flex";
+          }
+      } else { // Иначе
+          // Создаём строку с выводом времени
+          let strTimer = `${Math.trunc(minutes)}:${seconds}`;
+          // Выводим строку в блок для показа таймера
+          timerShow.innerHTML = strTimer;
+      }
+      --timeMinut; // Уменьшаем таймер
+    }, 1000);
   }
 
   function restartGame() {
+    // let timerShow = document.getElementById('timer');
+    // timerShow.style.display = 'none';
+    endOfTimer = true;
+
     let mainContainer = document.querySelector(".main__container");
     let background = document.querySelector(".background");
     let menu = document.querySelector(".container");
@@ -157,4 +204,5 @@
     let menuBack = document.querySelector('.menu__back')
     menuBack.style.display = 'none';
   }
+
 })();
