@@ -144,6 +144,12 @@
   function startGame() {
     endOfTimer = false;
     let timerInput = document.getElementById('time');
+    timerInput.style.borderColor = 'black';
+    timerInput.style.borderRadius = '3px';
+    if(!timerInput.value) {
+      timerInput.style.borderColor = 'red';
+      return;
+    }
     let timerShow = document.getElementById('timer');
     timerShow.style.display = 'block';
     let timeMinut = parseInt(timerInput.value) * 60;
